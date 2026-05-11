@@ -4,10 +4,9 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="port_css.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
   </head>
   <body>
+    <!-- The navigation bar -->
     <header class="navbar">
     <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
@@ -18,74 +17,71 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#projects">Projects</a>
     </nav>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">Toggle Dark Mode</button>
   </header>
+
+      <!-- The hero section -->
     <section class="hero" id="home">
     <div class="hero-img-wrap">
       <img
         src="front-shot.png"
-        alt="Khalid Yaser"
+        alt="Khalid Yaser"           
         width="400"
         height="400"
-        loading="lazy"
         class="hero-img"
       />
     </div>
     <div class="hero-text">
-      <span class="hero-tag">Software Engineering Student</span>
-      <h1>Hi, I'm<br>Khalid Yaser</h1>
-      <p style="font-size: 20px;">I build things for the web. Currently studying software engineering and exploring full-stack development.</p>
+      <h1>Hi, I'm<br><span class="hero-name" id="hero-name"></span></h1>
+      <p style="font-size: 20px;" id="hero-text"></p>
     </div>
   </section>
-  
-  <html>
-  <head>
-    <title>Your Name - CV</title>
-  </head>
-  <body>
-    <h1 style="text-align: center;">Khalid Yaser</h1>
-    <p style="text-align: center;">Email: s202100931@uoh.edu.sa</p>
- 
-    <h2 style="text-align: center;">Bachelor's Degree</h2>
-    <p style="text-align: center;">Software Engineering, University of Hail</p>
- 
-  <h2 style="text-align: center;">Skills</h2>
-  <ul style="list-style: none; padding: 0; text-align: center;">
-  <li> • HTML</li>
-  <li>• CSS</li>
-  </ul>
- 
-    <h2 style="text-align: center;">Projects</h2>
-    <p style="text-align: center;">Portfolio Website design, COOP training</p>
-</body>
-</html>
 
+  <!-- The about section -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p id="about-text"></p>
+    <div class="skills">
+      <span class="badge">PHP</span>
+      <span class="badge">Laravel</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">HTML &amp; CSS</span>
+      <span class="badge">MySQL</span>
+      <span class="badge">Flutter</span>
+    </div>
+  </section>
+
+    <section class="section" id="projects">
+    <h2>My Projects</h2>
+    <div class="projects" id="projects-list">
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/mmkjhhj929@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="http://portfolio.khalid-yaser.online">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name here..." required><br>
+      <br><label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required><br>
+      <br><label for="message">Message:</label>
+      <textarea  type="textarea" id="message" name="message" placeholder="Let me know how I can help!" required></textarea><br>
+      <input type="submit" value="Send">
+  </section>
+
+
+
+  <!-- The footer -->
   <footer class="footer">
     <p>&copy; 2026 Khalid Yaser</p>
   </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', open);
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('form-success').hidden = false;
-      e.target.reset();
-    }
-  </script>
+      
+  
+  <script src="jscode.js"></script>
   </body>
   
 </html>
